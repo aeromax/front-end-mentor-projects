@@ -9,7 +9,9 @@
     --cyan: 0, 255, 247;
 }
 
-
+a{
+    color: #ffffff;
+}
 a.text-link {
     text-decoration: none;
     -webkit-transition: color .25s ease-in-out;
