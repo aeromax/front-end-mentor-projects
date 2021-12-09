@@ -1,0 +1,22 @@
+{
+  "name": "front-end-mentor-projects",
+  "version": "1.0.0",
+  "description": "Practice projects from Frontend Mentor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeromax/front-end-mentor-projects.git"
+  },
+  "author": "Max Palmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aeromax/front-end-mentor-projects/issues"
+  },
+  "homepage": "https://github.com/aeromax/front-end-mentor-projects#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
