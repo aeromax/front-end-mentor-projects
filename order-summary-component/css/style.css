@@ -9,6 +9,7 @@
 }
 body{
 background-color: var(--very-pale-blue);
+background: no-repeat center/cover url('../images/pattern-background-mobile.svg');
 margin: 0;
 }
 button{
@@ -16,6 +17,7 @@ button{
 	font-family: var(--red-hat-display);
 font-weight: 600;
 font-size: .9rem;
+margin: 0 auto;
 }
 div{
 display: inline-block;
@@ -70,7 +72,7 @@ color: var(--dark-blue);
 color:  var(--desaturated-blue);
 font-weight: 500;
 font-size: 1rem;
-line-height: 1.8rem;
+line-height: 1.7rem;
 text-align: center;
 }
 .plan{
@@ -82,7 +84,7 @@ width:  100%;
 background-size: border-box;
 }
 .plan div{
-	margin: .7rem;
+	margin: .9rem;
 }
 .plan .icon{
 background: no-repeat center/contain url('../images/icon-music.svg');
@@ -95,14 +97,13 @@ text-align: left;
 font-weight: 700;
 row-gap: .2rem;
 font-size: .9rem;
-margin:  auto auto auto .5rem;
 }
 .plan .text .price{
 font-weight: 500;
 color: var(--desaturated-blue);
 }
-.plan .text span{
-display: block
+.plan .text{
+	margin:  auto auto auto .5rem;
 }
 .change button{
 display: inline-block;
@@ -151,3 +152,28 @@ border:  none;
 
 .attribution { font-size: .68rem; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+
+
+@media only screen 
+and (min-width : 960px) {
+	body{
+		background: no-repeat center/cover url(../images/pattern-background-desktop.svg);
+	}
+	.card{
+		max-width: 25rem;
+	}
+	.card .content{
+		padding: 2rem;
+	}
+	.header{
+		font-size: 1.8rem;
+		margin:  0;
+	}
+	.plan .text{
+		font-size: 1rem;
+	}
+	.plan div{
+		margin:  1.2rem;
+	}
+}
