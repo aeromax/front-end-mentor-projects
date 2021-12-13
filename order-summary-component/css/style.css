@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+:root{
+--pale-blue: hsl(225, 100%, 94%);
+--bright-blue: hsl(245, 75%, 52%);
+--very-pale-blue: hsl(225, 100%, 98%);
+--desaturated-blue: hsl(224, 23%, 55%);
+--dark-blue: hsl(223, 47%, 23%);
+--red-hat-display:   "Red Hat Display", helvetica, arial, sans-serif;
+}
+body{
+background-color: var(--very-pale-blue);
+}
+#wrapper{
+min-height: 100%;
+min-width: 100%;
+position: absolute;
+display: flex;
+justify-content: center;
+align-content: center;
+}
+.card{
+display: inline-block;
+position: relative;
+box-shadow: 3px 0px 15px rgba(0,0,0,.2);
+background-color: #ffffff;
+overflow: hidden;
+border-radius: 1.25rem;
+}
+.card .inner-wrapper{
+row-gap: 17px;
+margin:  0 auto;
+max-width: 20.375rem;
+max-height: 100%;
+padding: 1.56rem;
+}
+.card .hero{
+width: 100%;
+background: no-repeat center/cover url('../images/illustration-hero.svg');
+}
+.header{
+font-family: var(--red-hat-display);
+text-align: center;
+font-size: 1.2rem;
+}
+.attribution { font-size: .68rem; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
