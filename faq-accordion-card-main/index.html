@@ -1,45 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Frontend Mentor | FAQ Accordion Card</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Frontend Mentor | FAQ Accordion Card</title>
 </head>
+
 <body>
-  <main>
-    <div id="wrapper">
-      <div class="card">
-        <div class="hero"></div>
-        <div class="content">
-          <div class="header">FAQ</div>
-          <div class="accordions"></div>
+    <main>
+        <div id="wrapper">
+            <div class="card">
+                <div class="hero"></div>
+                <div class="content">
+                    <div class="header">FAQ</div>
+                    <div class="accordion-container">
+                        <input id="accordion1" type="radio" name="accordion" value="accordion1">
+                        <input id="accordion2" type="radio" name="accordion" value="accordion2">
+                        <input id="accordion3" type="radio" name="accordion" value="accordion3">
+                        <input id="accordion4" type="radio" name="accordion" value="accordion4">
+                        <input id="accordion5" type="radio" name="accordion" value="accordion5">
+                        <ul class="accordions">
+                            <li>
+                                <label for="accordion1" class="accordion-title">
+                                    <span>How many team members can I invite?</span>
+                                    <span class="accordion-heading"><img src="images/icon-arrow-down.svg" alt=""></span>
+                                </label>
+                                <div class="accordion-content"> You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</div>
+                            </li>
+                            <li>
+                                <label for="accordion2" class="accordion-title">
+                                    <span>What is the maximum file upload size?</span>
+                                    <span class="accordion-heading"><img src="images/icon-arrow-down.svg" alt=""></span>
+                                </label>
+                                <div class="accordion-content">No more than 2GB. All files in your account must fit your allotted storage space.</div>
+                            </li>
+                            <li>
+                                <label for="accordion3" class="accordion-title">
+                                    <span>How do I reset my password?</span>
+                                    <span class="accordion-heading"><img src="images/icon-arrow-down.svg" alt=""></span>
+                                </label>
+                                <div class="accordion-content">Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.</div>
+                            </li>
+                            <li>
+                                <label for="accordion4" class="accordion-title">
+                                    <span>Can I cancel my subscription?</span>
+                                    <span class="accordion-heading"><img src="images/icon-arrow-down.svg" alt=""></span>
+                                </label>
+                                <div class="accordion-content">Yes! Send us a message and we’ll process your request no questions asked.</div>
+                            </li>
+                            <li>
+                                <label for="accordion5" class="accordion-title">
+                                    <span>Do you provide additional support?</span>
+                                    <span class="accordion-heading"><img src="images/icon-arrow-down.svg" alt=""></span>
+                                </label>
+                                <div class="accordion-content">Chat and email support is available 24/7. Phone lines are open during normal business hours.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </main>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
     </div>
-  </main>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
-
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
-
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
-
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
-
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
+
 </html>

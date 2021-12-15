@@ -1,30 +1,135 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
-:root{
---very-dark-desaturated-blue: hsl(238, 29%, 16%);
---soft-red: hsl(14, 88%, 65%);
-/*Background gradient:*/
---soft-violet: hsl(273, 75%, 66%);
---soft-blue: hsl(240, 73%, 65%);
-/*Text*/
---very-dark-grayish-blue: hsl(237, 12%, 33%);
---dark-grayish-blue: hsl(240, 6%, 50%);
-/*Dividers*/
---light-grayish-blue: hsl(240, 5%, 91%);
---font-kumbh-sans:  "Kumbh Sans", Helvetica Neue, helvetica, arial, sans-serif;
-}
-body{
-    background-color: linear-gradient(top|center, var(--soft-violet), var(--soft-blue));
-}
-#wrapper{
-    top: 50%;
-}
-.card{
-    height: 100%;
-    min-height: 20.375rem ;
-}
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
 
-@media only screen
-    and (min-width : 1440px) {
+:root {
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    /*Background gradient:*/
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    /*Text*/
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    /*Dividers*/
+    --light-grayish-blue: hsl(240, 5%, 91%);
+    --font-kumbh-sans: "Kumbh Sans", Helvetica Neue, helvetica, arial, sans-serif;
 }
+
+body {
+    background-image: -webkit-linear-gradient(top|left, var(--soft-violet), var(--soft-blue));
+    background-image: linear-gradient(top|left, var(--soft-violet), var(--soft-blue));
+}
+
+#wrapper {
+    height: 90vh;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    min-height: 20.375rem;
+    max-width: 20.3rem;
+}
+.card .header{
+    margin: 0 auto;
+    font-family: var(--font-kumbh-sans);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+.card .content{
+    margin:  0 auto;
+}
+.accordion-container .accordions {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-kumbh-sans);
+    font-weight: 400;
+    font-size: .8rem;
+}
+
+.accordions li {
+    list-style-type: none;
+    transition: all .25s;
+    border: none;
+}
+
+.accordions li:not(:last-child) {
+    border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.accordion-container input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.accordion-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .25s;
+    height: 3.125rem;
+}
+
+.accordions .accordion-title:hover {
+    color: var(--soft-red);
+}
+
+.accordions .accordion-heading {
+    display: inline-block;
+    white-space: nowrap;
+    transform-origin: bottom;
+    height: .7rem;
+    width: .7rem;
+    margin-bottom: .4rem;
+    transition: all .25s;
+}
+
+.accordions .accordion-content {
+    display: none;
+    align-items: center;
+    padding: 20px;
+    transition: all .25s;
+}
+
+[value="accordion1"]:checked~.accordions [for="accordion1"]+.accordion-content,
+[value="accordion2"]:checked~.accordions [for="accordion2"]+.accordion-content,
+[value="accordion3"]:checked~.accordions [for="accordion3"]+.accordion-content,
+[value="accordion4"]:checked~.accordions [for="accordion4"]+.accordion-content,
+[value="accordion5"]:checked~.accordions [for="accordion5"]+.accordion-content {
+    display: flex;
+    transition: all .25s;
+}
+
+[value="accordion1"]:checked~.accordions [for="accordion1"] > .accordion-heading,
+[value="accordion2"]:checked~.accordions [for="accordion2"] > .accordion-heading,
+[value="accordion3"]:checked~.accordions [for="accordion3"] > .accordion-heading,
+[value="accordion4"]:checked~.accordions [for="accordion4"] > .accordion-heading,
+[value="accordion5"]:checked~.accordions [for="accordion5"] > .accordion-heading {
+    transform: rotate(-90deg);
+    transition: all .25s;
+}
+[value="accordion1"]:checked~.accordions [for="accordion1"],
+[value="accordion2"]:checked~.accordions [for="accordion2"],
+[value="accordion3"]:checked~.accordions [for="accordion3"],
+[value="accordion4"]:checked~.accordions [for="accordion4"],
+[value="accordion5"]:checked~.accordions [for="accordion5"] {
+    font-weight: 700;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width : 1440px) {}
