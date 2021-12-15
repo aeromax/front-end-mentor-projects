@@ -15,12 +15,14 @@
 }
 
 body {
-    
-    background-image:         linear-gradient(var(--soft-violet), var(--soft-blue));
+
+    background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
 }
-div{
-            box-sizing: border-box;
+
+div {
+    box-sizing: border-box;
 }
+
 #wrapper {
     display: flex;
     height: 100vh;
@@ -37,40 +39,43 @@ div{
     width: 20.3rem;
     background-color: #fff;
     border-radius: 1rem;
-    box-shadow: 0 3.5rem 3.5rem -2rem rgba(0,0,0, .55 );
-    margin-top:  7.8rem;
+    box-shadow: 0 3.5rem 3.5rem -2rem rgba(0, 0, 0, .55);
+    margin-top: 7.8rem;
+    background-image: url('../images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 76%;
+    background-position-x: 50%;
+    background-position-y: -8rem;
 }
-.card .hero{
-    height: 9em;
-    margin: -7.8rem 0 7.8rem 0;
+
+.card .hero {
+    /* height: 9em; */
+    margin: -7.8rem 0 3.7rem 0;
     width: 100%;
 }
 
-.card .hero img{
+.card .hero .image-swap {
+    background: no-repeat center/75% url('../images/illustration-woman-online-mobile.svg');
     height: 13rem;
     width: 100%;
     display: inline-block;
-    margin:  0 auto;
-}
-.card .hero img:nth-child(2){
-    margin-top: -6.5rem;
-    height: 100%;
-    width:  100%;
-    transform: scale(.85);
-}
-.card .header{
     margin: 0 auto;
+}
+.card .hero .box-image{
+    display: none;
+}
+
+.card .header {
     font-family: var(--font-kumbh-sans);
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
 }
-.card .content{
-    margin:  0 auto;
+
+.accordion-container {
+    margin: .5rem 1.5rem 3rem 1.5rem;
 }
-.accordion-container{
-    padding: 1.5rem;
-}
+
 .accordion-container .accordions {
     display: flex;
     flex-direction: column;
@@ -87,7 +92,7 @@ div{
     border: none;
 }
 
-.accordions li:not(:last-child) {
+.accordions li {
     border-bottom: 1px solid var(--light-grayish-blue);
 }
 
@@ -118,6 +123,7 @@ div{
     width: .7rem;
     margin-bottom: .4rem;
     transition: all .25s;
+    padding: 0 0 0 1rem;
 }
 
 .accordions .accordion-content {
@@ -137,14 +143,15 @@ div{
     transition: all .25s;
 }
 
-[value="accordion1"]:checked~.accordions [for="accordion1"] > .accordion-heading,
-[value="accordion2"]:checked~.accordions [for="accordion2"] > .accordion-heading,
-[value="accordion3"]:checked~.accordions [for="accordion3"] > .accordion-heading,
-[value="accordion4"]:checked~.accordions [for="accordion4"] > .accordion-heading,
-[value="accordion5"]:checked~.accordions [for="accordion5"] > .accordion-heading {
+[value="accordion1"]:checked~.accordions [for="accordion1"]>.accordion-heading,
+[value="accordion2"]:checked~.accordions [for="accordion2"]>.accordion-heading,
+[value="accordion3"]:checked~.accordions [for="accordion3"]>.accordion-heading,
+[value="accordion4"]:checked~.accordions [for="accordion4"]>.accordion-heading,
+[value="accordion5"]:checked~.accordions [for="accordion5"]>.accordion-heading {
     transform: rotate(180deg);
     transition: all .25s;
 }
+
 [value="accordion1"]:checked~.accordions [for="accordion1"],
 [value="accordion2"]:checked~.accordions [for="accordion2"],
 [value="accordion3"]:checked~.accordions [for="accordion3"],
@@ -163,4 +170,66 @@ div{
     color: hsl(228, 45%, 44%);
 }
 
-@media only screen and (min-width : 1440px) {}
+@media only screen and (min-width :
+
+/* 1440px */
+830px) {
+    .card {
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 3rem;
+        align-items: center;
+        width: 58rem;
+        background-image: url('../images/bg-pattern-desktop.svg');
+        background-repeat: no-repeat;
+        background-position: -2956% 69%;
+        background-size: 98%;
+        padding: 3rem 5rem 3rem 0;
+    }
+
+    .card .hero {
+        position: relative;
+        width: 55%;
+        display: inline-block;
+        height: 23rem;
+        margin: 0;
+        float: left;
+    }
+
+    .card .hero .image-swap-mask {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .card .hero .image-swap {
+        background: no-repeat right/100% url('../images/illustration-woman-online-desktop.svg');
+        margin: 0 0 0 -5rem;
+        height: 100%;
+        display: inline-block;
+        float: left
+    }
+
+    .card .content {
+        margin: 0;
+        width: 40%;
+        display: inline-block;
+        float: right;
+    }
+
+    .card .content .header {
+        text-align: left;
+        padding: 0 0 1.5rem 0;
+    }
+
+    .card .content .accordion-container {
+        padding: 0;
+        margin: 0;
+    }
+
+    .card .hero .box-image {
+        position: relative;
+        float: left;
+        margin-top:  -13rem;
+        margin-left: -5rem;
+    }
+}
