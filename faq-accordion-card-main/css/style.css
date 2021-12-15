@@ -61,11 +61,12 @@ div {
     display: inline-block;
     margin: 0 auto;
 }
-.card .hero .box-image{
+
+.card .hero .box-image {
     display: none;
 }
 
-.card .header {
+.card .header h1 {
     font-family: var(--font-kumbh-sans);
     font-size: 2rem;
     font-weight: 700;
@@ -161,6 +162,7 @@ div {
 }
 
 .attribution {
+    color: #fff;
     font-size: 11px;
     text-align: center;
 }
@@ -170,9 +172,8 @@ div {
     color: hsl(228, 45%, 44%);
 }
 
-@media only screen and (min-width :
 
-1440px) {
+@media only screen and (min-width : 1440px) {
     .card {
         flex-direction: row;
         justify-content: space-between;
@@ -215,7 +216,7 @@ div {
         float: right;
     }
 
-    .card .content .header {
+    .card .content .header h1 {
         text-align: left;
         padding: 0 0 1.5rem 0;
     }
@@ -226,9 +227,10 @@ div {
     }
 
     .card .hero .box-image {
+        display: block;
         position: relative;
         float: left;
-        margin-top:  -13rem;
+        margin-top: -13rem;
         margin-left: -5rem;
     }
 }
