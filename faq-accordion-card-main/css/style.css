@@ -15,21 +15,48 @@
 }
 
 body {
-    background-image: -webkit-linear-gradient(top|left, var(--soft-violet), var(--soft-blue));
-    background-image: linear-gradient(top|left, var(--soft-violet), var(--soft-blue));
+    
+    background-image:         linear-gradient(var(--soft-violet), var(--soft-blue));
 }
-
+div{
+            box-sizing: border-box;
+}
 #wrapper {
-    height: 90vh;
-    top: 50%;
     display: flex;
-    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-height: 20.375rem;
-    max-width: 20.3rem;
+    width: 20.3rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 3.5rem 3.5rem -2rem rgba(0,0,0, .55 );
+    margin-top:  7.8rem;
+}
+.card .hero{
+    height: 9em;
+    margin: -7.8rem 0 7.8rem 0;
+    width: 100%;
+}
+
+.card .hero img{
+    height: 13rem;
+    width: 100%;
+    display: inline-block;
+    margin:  0 auto;
+}
+.card .hero img:nth-child(2){
+    margin-top: -6.5rem;
+    height: 100%;
+    width:  100%;
+    transform: scale(.85);
 }
 .card .header{
     margin: 0 auto;
@@ -40,6 +67,9 @@ body {
 }
 .card .content{
     margin:  0 auto;
+}
+.accordion-container{
+    padding: 1.5rem;
 }
 .accordion-container .accordions {
     display: flex;
@@ -73,6 +103,7 @@ body {
     align-items: center;
     transition: all .25s;
     height: 3.125rem;
+    color: var(--very-dark-grayish-blue);
 }
 
 .accordions .accordion-title:hover {
@@ -92,8 +123,9 @@ body {
 .accordions .accordion-content {
     display: none;
     align-items: center;
-    padding: 20px;
+    padding: 0 0 .6rem 0;
     transition: all .25s;
+    color: var(--dark-grayish-blue);
 }
 
 [value="accordion1"]:checked~.accordions [for="accordion1"]+.accordion-content,
@@ -110,7 +142,7 @@ body {
 [value="accordion3"]:checked~.accordions [for="accordion3"] > .accordion-heading,
 [value="accordion4"]:checked~.accordions [for="accordion4"] > .accordion-heading,
 [value="accordion5"]:checked~.accordions [for="accordion5"] > .accordion-heading {
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
     transition: all .25s;
 }
 [value="accordion1"]:checked~.accordions [for="accordion1"],
@@ -125,7 +157,6 @@ body {
     font-size: 11px;
     text-align: center;
 }
-
 
 
 .attribution a {
