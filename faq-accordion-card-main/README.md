@@ -20,8 +20,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://github.com/aeromax/front-end-mentor-projects/tree/main/faq-accordion-card-main)
-- Live Site URL: (https://aeromax.github.io/front-end-mentor-projects/faq-accordion-card-main/)
+- Solution URL:(https://github.com/aeromax/front-end-mentor-projects/tree/main/faq-accordion-card-main)
+- Live Site URL:(https://aeromax.github.io/front-end-mentor-projects/faq-accordion-card-main/)
 
 ### Built with
 
@@ -47,9 +47,10 @@ On the plus side, I was able to complete the bonus part, which was to make accor
 ## Author
 
 [My GitHub](https://github.com/aeromax)
+
 Frontend Mentor - [@aeromax](https://www.frontendmentor.io/profile/aeromax)
 
 ## Acknowledgments
 
-This [Tuts Plus article] (https://webdesign.tutsplus.com/tutorials/accordion-component-with-css-checkbox-hack--cms-34105) from [George Martsoukos] (https://georgemartsoukos.com/) helped me accomplish building accordions without any javascript, using the checkbox hack.
+This [Tuts Plus article](https://webdesign.tutsplus.com/tutorials/accordion-component-with-css-checkbox-hack--cms-34105) from [George Martsoukos](https://georgemartsoukos.com/) helped me accomplish building accordions without any javascript, using the checkbox hack.
 
