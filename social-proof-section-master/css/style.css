@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --font-spartan: 'Spartan', Helvetica Neue, helvetica, arial, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+#wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vh;
+    background-image: url('../images/bg-pattern-top-desktop.svg'), url('../images/bg-pattern-bottom-desktop.svg');
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.bkg-top,
+.bkg-bottom {
+    position: absolute;
+    height: 50%;
+    min-width: 50%;
+}
+
+.card {
+    max-width: 69.625rem;
+    margin: 0 auto;
+}
+
+.card .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .headline {
+    font-family: var(--font-spartan);
+    font-size: 1.5rem;
+    color: var(--very-dark-magenta);
+    line-height: 1;
+}
+
+.card .intro {
+    font-family: var(--font-spartan);
+    font-size: .9rem;
+    color: var(--dark-grayish-magenta);
+    line-height: 1.6;
+}
+
+.card .top .left {
+    width: 40%;
+}
+
+.card .top .right {
+    width: 55%;
+}
+
+.card .top .right .ratings {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(3, 1fr 1em);
+}
+
+.ratings {
+    margin: 0;
+    padding: 0;
+}
+
+.ratings li {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 2rem;
+    align-items: center;
+    background-color: var(--light-grayish-magenta);
+    border-radius: .5rem;
+    padding: 1rem 3rem 1rem 1.5rem;
+    font-family: var(--font-spartan);
+    font-weight: 700;
+    font-size: .8rem;
+    color: var(--very-dark-magenta);
+}
+
+.ratings li:nth-child(1) {
+    grid-column: 2 / span 8;
+    grid-row: 1;
+}
+
+.ratings li:nth-child(2) {
+    grid-column: 3 / span 8;
+    grid-row: 3;
+}
+
+.ratings li:nth-child(3) {
+    grid-column: 4 / span 8;
+    grid-row: 5;
+}
+
+.ratings .stars img {
+    padding: 0 .1rem;
+}
+
+.card .bottom {
+    display: grid;
+    grid-template-columns: 1fr 2rem 1fr 2rem 1fr;
+    grid-template-rows: repeat(14, 1fr);
+    width: 100%;
+    min-height: 16.75rem;
+    margin-top: 3rem;
+}
+
+.verbatim {
+    background-color: var(--very-dark-magenta);
+    color: #fff;
+    padding: 2rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: var(--font-spartan);
+    color: var(--light-grayish-magenta);
+}
+
+.verbatim:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / span 12;
+}
+
+.verbatim:nth-child(2) {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 12;
+}
+
+.verbatim:nth-child(3) {
+    grid-column: 5 / span 1;
+    grid-row: 3 / span 12;
+}
+
+.verbatim .user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: .8rem;
+}
+
+.verbatim .user .avatar img {
+    border-radius: 50%;
+    max-width: 2.5rem;
+    margin-right: 1.3rem;
+}
+
+.verbatim .user .info .name {
+    font-weight: 700;
+    display: block;
+    margin-bottom: .2rem;
+}
+
+.verbatim .user .info .verified {
+    font-weight: 400;
+    color: var(--soft-pink);
+    display: block;
+}
+
+.verbatim .quote {
+    font-size: .8rem;
+    line-height: 1.5rem;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width : 1440px) {
+    #wrapper {
+        min-height: auto;
+        min-width: auto;
+        padding: 1rem;
+    }
+
+    .card,
+    .card .top {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .card .bottom,
+    .card .top .left,
+    .card .top .right,
+    .card .top .right .ratings {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .card .top .right .ratings li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: .5rem;
+        padding: 1rem .5rem;
+    }
+    .card .top .right .ratings li:not(:first-of-type),
+    .card .bottom .verbatim:not(:first-of-type) {
+        margin-top: .7rem;
+    }
+
+    .card .bottom .verbatim .quote {
+        margin-top: 1rem;
+    }
+
+    .card .top .left>* {
+        text-align: center;
+    }
+
+    .card .top .left .headline {
+        font-size: 1rem;
+    }
+}
