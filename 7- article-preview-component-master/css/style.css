@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+:root {
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --font-manrope: "Manrope", Helvetica Neue, helvetica, arial, sans-serif;
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+}
+
+body {
+    background-color: var(--light-grayish-blue);
+}
+
+h1 {
+    margin: 0;
+
+    font-family: var(--font-manrope);
+    font-size: 1rem;
+    line-height: 1.5;
+
+    color: var(--very-dark-grayish-blue);
+}
+
+#wrapper {
+    display: flex;
+    min-width: 100%;
+    min-height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    height: 32rem;
+    max-width: 20.5rem;
+    flex-direction: column;
+
+    border-radius: .5rem;
+    background-color: #fff;
+}
+
+.card .hero {
+    display: block;
+    min-height: 40%;
+
+    border-radius: .5rem .5rem 0 0;
+    background: no-repeat center/cover url("../images/drawers.jpg");
+}
+
+.card .body {
+    display: flex;
+    height: 100%;
+    padding-top: 2rem;
+    flex-direction: column;
+}
+
+.card .body .intro {
+    padding: 0 2rem;
+}
+
+.card .body .description {
+    padding: 0 2rem 0 2rem;
+    margin-top: 1rem;
+
+    font-family: var(--font-manrope);
+    font-size: .8rem;
+    font-weight: 500;
+    line-height: 1.7;
+
+    color: var(--desaturated-dark-blue);
+
+    flex: 1;
+}
+
+
+.card-footer {
+    display: flex;
+    height: 4rem;
+    padding: 0 2rem;
+    flex-direction: row;
+
+    transition: all .5s ease;
+
+    border-radius: 0 0 .5rem .5rem;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-footer .share {
+    display: flex;
+    width: 2rem;
+    flex-direction: row;
+}
+.card-footer .author {
+    display: inline-block;
+    min-width: 11rem;
+}
+
+.card-footer .author .avatar {
+    display: inline-block;
+    max-width: 4rem;
+    max-height: 4rem;
+    margin: 0 1rem 0 0;
+}
+
+.card-footer .author .avatar img {
+    border-radius: 50%;
+}
+
+.card-footer .author .by-line {
+    display: inline-block;
+    float: right;
+
+    font-family: var(--font-manrope);
+    font-size: .8rem;
+    font-weight: 700;
+
+    color: var(--very-dark-grayish-blue);
+}
+.card-footer .author .by-line span {
+    display: block;
+}
+.card-footer .author .by-line span:nth-of-type(2) {
+    font-weight: 500;
+
+    color: var(--grayish-blue);
+}
+
+.card-footer .share-button {
+    z-index: 2;
+
+    float: right;
+    width: 2rem;
+    height: 2rem;
+
+    border: none;
+    border-radius: 50%;
+    background-color: var(--light-grayish-blue);
+
+    fill: var(--desaturated-dark-blue);
+}
+
+.card-footer .share .share-text {
+    display: none;
+    margin-right: 1rem;
+
+    font-family: var(--font-manrope);
+    font-size: .8rem;
+    font-weight: 500;
+
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, .6);
+}
+
+.card-footer .share .share-icons {
+    display: none;
+}
+
+.card-footer .share .share-icons button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.attribution {
+    font-size: 11px;
+
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Share toggle */
+.card-footer.share-toggle {
+    transition: all .5s ease;
+
+    background-color: var(--very-dark-grayish-blue);
+}
+.card-footer.share-toggle .author {
+    display: none;
+}
+.card-footer.share-toggle .share {
+    width: 100%;
+}
+.card-footer.share-toggle .share .share-actions .share-icons,
+.card-footer.share-toggle .share .share-actions .share-text {
+    display: inline-block;
+}
+.card-footer.share-toggle .share .share-actions {
+    display: flex;
+    width: 15.5rem;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: left;
+}
+
+
+@media only screen and (min-width: 960px) {
+    .card {
+        max-width: 45.5rem;
+        max-height: 17.6rem;
+        flex-direction: row;
+    }
+
+    .card .hero {
+        height: 100%;
+        min-width: 40%;
+    }
+
+    .card .body {
+        bottom: 0;
+
+        padding: 0;
+
+        justify-content: space-between;
+    }
+
+    .card .body .description {
+        margin: 0;
+
+        flex: 0;
+    }
+
+    .card .body .intro h1 {
+        margin-top: 2rem;
+
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    /* Desktop share toggle styles */
+    .card-footer.share-toggle {
+        background-color: #fff;
+    }
+    .card-footer .share {
+        position: relative;
+
+        display: inline-block;
+    }
+    .card-footer.share-toggle .author {
+        display: inline-block;
+    }
+    .card-footer .share .share-actions {
+        transition: all .5s ease;
+    }
+    .card-footer.share-toggle .share .share-actions {
+        position: absolute;
+        top: -5rem;
+        left: 3.5rem;
+
+        display: flex;
+        width: 15.5rem;
+        height: 3.43rem;
+
+        transition: all .5s ease;
+        transform: scale(1.0);
+
+        opacity: 1;
+        border-radius: .6rem;
+        background-color: var(--very-dark-grayish-blue);
+        box-shadow: 0 1.5rem 1.5rem -.5rem hsla(0,0%,0%,.15);
+
+        align-items: center;
+        justify-content: center;
+    }
+    .card-footer.share-toggle .share-actions::after {
+        position: absolute;
+        z-index: 1;
+
+        min-width: 1.5rem;
+        min-height: 1.5rem;
+
+        content: "";
+        transition: all .5s ease;
+        transform: rotate(45deg) translate(75%, 75%);
+
+        background-color: var(--very-dark-grayish-blue) ;
+    }
+    .card-footer.share-toggle .share-icons {
+        display: flex;
+    }
+    .card-footer.share-toggle .share-text {
+        display: inline-block;
+    }
+}
