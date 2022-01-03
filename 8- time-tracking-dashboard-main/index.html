@@ -9,7 +9,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
   <link rel="stylesheet" href="css/style.css" />
   <title>Frontend Mentor | Time tracking dashboard</title>
-
+  <script src="js/time-tracking.js"></script>
+  <script>
+    getTrackingData();
+  </script>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
@@ -42,39 +45,63 @@
         </div>
         <div class="card work">
           <div class="decoration"></div>
-          <div class="title"><span class="more">...</span></div>
-          <div class="current"></div>
-          <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          <div class="content">
+            <div class="title">Work
+              <img src="images/icon-ellipsis.svg" width="20" height="auto" alt="">
+            </div>
+            <div class="current"></div>
+            <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          </div>
         </div>
         <div class="card play">
           <div class="decoration"></div>
-          <div class="title"><span class="more">...</span></div>
-          <div class="current"></div>
-          <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          <div class="content">
+            <div class="title">Play
+              <img src="images/icon-ellipsis.svg" width="20" height="auto" alt="">
+            </div>
+            <div class="current"></div>
+            <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          </div>
         </div>
         <div class="card study">
           <div class="decoration"></div>
-          <div class="title"><span class="more">...</span></div>
-          <div class="current"></div>
-          <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          <div class="content">
+            <div class="title">Study
+              <img src="images/icon-ellipsis.svg" width="20" height="auto" alt="">
+            </div>
+            <div class="current"></div>
+            <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          </div>
         </div>
         <div class="card exercise">
           <div class="decoration"></div>
-          <div class="title"><span class="more">...</span></div>
-          <div class="current"></div>
-          <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          <div class="content">
+            <div class="title">Exercise
+              <img src="images/icon-ellipsis.svg" width="20" height="auto" alt="">
+            </div>
+            <div class="current"></div>
+            <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          </div>
         </div>
         <div class="card social">
           <div class="decoration"></div>
-          <div class="title"><span class="more">...</span></div>
-          <div class="current"></div>
-          <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          <div class="content">
+            <div class="title">Social
+              <img src="images/icon-ellipsis.svg" width="20" height="auto" alt="">
+            </div>
+            <div class="current"></div>
+            <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          </div>
         </div>
         <div class="card self-care">
           <div class="decoration"></div>
-          <div class="title"><span class="more">...</span></div>
-          <div class="current"></div>
-          <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          <div class="content">
+            <div class="title">Self Care
+              <img src="images/icon-ellipsis.svg" width="20" height="auto" alt="">
+            </div>
+            <div class="current"></div>
+            <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
+          </div>
         </div>
       </div>
     </main>
