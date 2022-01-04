@@ -9,10 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
   <link rel="stylesheet" href="css/style.css" />
   <title>Frontend Mentor | Time tracking dashboard</title>
-  <script src="js/time-tracking.js"></script>
-  <script>
-    getTrackingData();
-  </script>
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
@@ -43,7 +40,7 @@
             </ul>
           </nav>
         </div>
-        <div class="card work">
+        <div class="card work" data-flag="work">
           <div class="decoration"></div>
           <div class="content">
             <div class="title">Work
@@ -53,7 +50,7 @@
             <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
           </div>
         </div>
-        <div class="card play">
+        <div class="card play" data-flag="play">
           <div class="decoration"></div>
           <div class="content">
             <div class="title">Play
@@ -63,7 +60,7 @@
             <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
           </div>
         </div>
-        <div class="card study">
+        <div class="card study" data-flag="study">
           <div class="decoration"></div>
           <div class="content">
             <div class="title">Study
@@ -73,7 +70,7 @@
             <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
           </div>
         </div>
-        <div class="card exercise">
+        <div class="card exercise" data-flag="exercise">
           <div class="decoration"></div>
           <div class="content">
             <div class="title">Exercise
@@ -83,7 +80,7 @@
             <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
           </div>
         </div>
-        <div class="card social">
+        <div class="card social" data-flag="social">
           <div class="decoration"></div>
           <div class="content">
             <div class="title">Social
@@ -93,7 +90,7 @@
             <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div>
           </div>
         </div>
-        <div class="card self-care">
+        <div class="card self-care" data-flag="Self care">
           <div class="decoration"></div>
           <div class="content">
             <div class="title">Self Care
@@ -114,7 +111,7 @@
         href="https://github.com/aeromax/">Max Palmer</a>.
     </div>
   </footer>
-
+  <script src="js/time-tracking.js"></script>
 </body>
 
 </html>
