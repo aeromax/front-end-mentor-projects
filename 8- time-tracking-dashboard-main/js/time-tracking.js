@@ -1,3 +1,14 @@
+
+// Store tracking data locally
+const trackingData =
+    fetch('data.json')
+        .then(data => {
+            return data.json();
+        })
+        .catch(err => {
+            console.log('Could not fetch data!');
+        });
+
 // Apply click events to nav buttons
 (function () {
     let button = document.querySelectorAll('.time-selection');
@@ -7,37 +18,25 @@
     });
 });
 
-// Gets entries for specific timeframe
-async function getTimeframes(timeframe) {
-    let data = await getTrackingData();
-
-    let t = timeframe;
-    console.log('Getting values for ' + t);
-    for (let i = 0; i < data.length; i++) {
+//Gets entries for specific timeframe
+function getTimeframes(period) {
+    console.log('getTimeFrames');
+    console.log('Getting values for ' + period);
+    for (let i = 0; i < trackingData.length; i++) {
         let arr = [];
-        arr.push(data[i].timeframes.t);
-        console.log(data[i].timeframes.t);
+        arr.push(trackingData[i].timeframes.period);
+        console.log(trackingData[i].timeframes.period);
     };
 };
 
-// Fetch tracking data
-function getTrackingData() {
-    const trackingData = fetch('data.json')
-        .then(data => {
-            return data.json();
-        })
-        .catch(err => {
-            console.log('Could not fetch data!');
-        });
-    return trackingData;
-};
-async function populateElements() {
-    const arr = await getTrackingData();
+function populateElements() {
+    console.log('populating elements!');
+    getTimeframes(daily);
     let t = '';
     let container = document.querySelector('#grid');
 
-    for (let i = 0; i < arr.length; i++) {
-        let card = arr[i];
+    for (let i = 0; i < trackingData.length; i++) {
+        let card = trackingData[i];
         let element =
             `
             <div class="card ${(card.title.toLowerCase()).replace(/\s/g, "-")}"> 
@@ -46,7 +45,7 @@ async function populateElements() {
             <div class="title">${card.title}
             <img src="images/icon-ellipsis.svg" width="20" height="auto" alt=""> 
             </div> 
-            <div class="current"></div> 
+            <div class="current">${card.timeframes.period.current}</div> 
             <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div> 
             </div> 
             </div>
@@ -55,12 +54,11 @@ async function populateElements() {
     }
 };
 
-async function populateData(arr) {
-    await populateElements(function () {
-        for (let i = 0; i < array.length; i++) {
-
-        }
-    });
-};
-
-populateElements(getTimeframes('daily'));
+(function () {
+    if (trackingData.length == 0) {
+        console.log('no data!');
+    }
+    else {
+        console.log('got data!');
+    }
+});
