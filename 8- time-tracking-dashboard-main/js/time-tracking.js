@@ -1,15 +1,3 @@
-// Fetch tracking data
-const data = function () {
-    const trackingData = fetch('data.json')
-        .then(data => {
-            return data.json();
-        })
-        .catch(err => {
-            console.log('Could not fetch data!');
-        });
-    return trackingData;
-};
-
 // Apply click events to nav buttons
 (function () {
     let button = document.querySelectorAll('.time-selection');
@@ -21,7 +9,7 @@ const data = function () {
 
 // Gets entries for specific timeframe
 async function getTimeframes(timeframe) {
-
+    let data = await getTrackingData();
 
     let t = timeframe;
     console.log('Getting values for ' + t);
@@ -32,9 +20,19 @@ async function getTimeframes(timeframe) {
     };
 };
 
-
+// Fetch tracking data
+function getTrackingData() {
+    const trackingData = fetch('data.json')
+        .then(data => {
+            return data.json();
+        })
+        .catch(err => {
+            console.log('Could not fetch data!');
+        });
+    return trackingData;
+};
 async function populateElements() {
-    const arr = data;
+    const arr = await getTrackingData();
     let t = '';
     let container = document.querySelector('#grid');
 
