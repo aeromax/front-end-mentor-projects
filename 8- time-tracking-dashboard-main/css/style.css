@@ -22,7 +22,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.grid{
+#grid{
     height: 31.6rem;
     display: grid;
     grid-template-columns:  15rem .8rem 15rem .8rem 15rem .8rem 15rem;
