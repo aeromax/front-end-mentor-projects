@@ -19,20 +19,20 @@ async function populateElements() {
     for (let i = 0; i < arr.length; i++) {
         let element =
             `
-            < div class="card ${t}"> +
-            <div class="decoration"></div> +
-            <div class="content"> +
-            <div class="title">Work +
-            <img src="images/icon-ellipsis.svg" width="20" height="auto" alt=""> +
-            </div> +
-            <div class="current"></div> +
-            <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div> +
-            </div> +
+            < div class="card ${arr[i].title}"> 
+            <div class="decoration"></div> 
+            <div class="content"> 
+            <div class="title">Work 
+            <img src="images/icon-ellipsis.svg" width="20" height="auto" alt=""> 
+            </div> 
+            <div class="current"></div> 
+            <div class="previous"><span class="previous-timeframe"></span><span class="previous-hours"></span></div> 
+            </div> 
             </div>
             `;
         t = arr[i].title;
         console.log(container);
-        container.append(element);
+        container.innerHTML = element;
     }
     return arr;
 };
