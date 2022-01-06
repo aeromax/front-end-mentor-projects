@@ -1,13 +1,23 @@
 
 // Store tracking data locally
-const trackingData =
-    fetch('data.json')
-        .then(data => {
-            return data.json();
-        })
-        .catch(err => {
-            console.log('Could not fetch data!');
-        });
+let trackingData = getData();
+async function getData() {
+    let response =
+        await fetch('data.json')
+            .then(data => {
+                console.log('getData');
+                return data.json();
+            })
+            .catch(error => {
+                console.log('Could not fetch data!');
+            });
+    let data = await response.data;
+    populateElements();
+
+}
+
+// Default setting for which period we will show when page loads
+let period = 'day';
 
 // Apply click events to nav buttons
 (function () {
@@ -15,26 +25,26 @@ const trackingData =
     button.forEach(element => {
         let time = element.getAttribute('name');
         element.addEventListener('click', populateElements(time));
-    });
-});
+    })
+})
 
 //Gets entries for specific timeframe
 function getTimeframes(period) {
-    console.log('getTimeFrames');
-    console.log('Getting values for ' + period);
+    console.log('getTimeFrames ' + period);
     for (let i = 0; i < trackingData.length; i++) {
         let arr = [];
         arr.push(trackingData[i].timeframes.period);
         console.log(trackingData[i].timeframes.period);
-    };
-};
+    }
+}
 
-function populateElements() {
-    console.log('populating elements!');
-    getTimeframes(daily);
+function populateElements(data) {
+
+    console.log('populateElements ' + period);
+    getTimeframes(period);
     let t = '';
     let container = document.querySelector('#grid');
-
+    console.log('creating ' + trackingData.length + ' cards');
     for (let i = 0; i < trackingData.length; i++) {
         let card = trackingData[i];
         let element =
@@ -52,7 +62,7 @@ function populateElements() {
             `;
         container.innerHTML += element;
     }
-};
+}
 
 (function () {
     if (trackingData.length == 0) {
@@ -61,4 +71,4 @@ function populateElements() {
     else {
         console.log('got data!');
     }
-});
+})
