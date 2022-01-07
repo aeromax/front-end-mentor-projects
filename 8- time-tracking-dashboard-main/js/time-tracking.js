@@ -1,8 +1,6 @@
-// Default setting for which period we will show when page loads
-let period = 'daily';
-
+let period = '';
 // Store tracking data locally
-function getData() {
+function getData(period) {
     return fetch('data.json')
         .then(data => {
             console.log('getData');
@@ -15,8 +13,6 @@ function getData() {
             console.log(`Error fetching data: ${error}`);
         });
 }
-
-
 
 function getTimes(card, period) {
     let arr = [];
@@ -35,17 +31,14 @@ function getTimes(card, period) {
     return arr[0];
 }
 
-//Updates data variables in html
-function populateData(period) {
-    console.log('populateData ' + period);
-}
 // Adds a card for each data entry
-function populateElements(data) {
+function populateElements(data, period) {
     let container = document.querySelector('#grid');
     for (let i = 0; i < data.length; i++) {
         let card = data[i];
         let title = card.title;
         let times = getTimes(card, period);
+
         let element =
             `
             <div class="card ${(card.title.toLowerCase()).replace(/\s/g, "-")}"> 
@@ -61,20 +54,18 @@ function populateElements(data) {
             </div>
             `;
         container.innerHTML += element;
+
+
     }
 }
-// Apply click events to nav buttons
-(function (period) {
+
+document.addEventListener('DOMContentLoaded', function () {
     let buttons = document.querySelectorAll('.time-selection');
-
-    for (let i = 0; i < buttons.length; i++) {
-        console.log(buttons[i]);
-        buttons[i].addEventListener('click', function () {
-            console.log('click');
-        });
-    }
-
-})();
-
-
-getData();
+    buttons.forEach(button => {
+        let p = button.getAttribute('data-flag');
+        button.addEventListener('click', function () {
+            console.log(p);
+            getData(p);
+        })
+    })
+})
