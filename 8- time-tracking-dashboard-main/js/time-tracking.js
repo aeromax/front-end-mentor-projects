@@ -1,16 +1,16 @@
 let period = '';
 // Store tracking data locally
-function getData(period) {
+function getData() {
     return fetch('data.json')
         .then(data => {
             console.log('getData');
             return data.json();
         })
         .then(data => {
-            populateElements(data, period);
+            return data;
         })
         .catch(error => {
-            console.log(`Error fetching data: ${error}`);
+            console.log(`Error fetching data: ${error} background-color:white;color:red`);
         });
 }
 
@@ -32,7 +32,9 @@ function getTimes(card, period) {
 }
 
 // Adds a card for each data entry
-function populateElements(data, period) {
+async function populateElements(period) {
+    console.log('populateElements');
+    // let data = await getData();
     let container = document.querySelector('#grid');
     for (let i = 0; i < data.length; i++) {
         let card = data[i];
@@ -60,12 +62,13 @@ function populateElements(data, period) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    populateElements('daily');
     let buttons = document.querySelectorAll('.time-selection');
     buttons.forEach(button => {
-        let p = button.getAttribute('data-flag');
         button.addEventListener('click', function () {
-            console.log(p);
-            getData(p);
+            period = button.getAttribute('data-flag');
+            console.log(period);
+            populateElements(period);
         })
     })
 })
