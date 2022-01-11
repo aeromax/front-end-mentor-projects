@@ -1,4 +1,4 @@
-let period = '';
+let period = 'daily';
 // Store tracking data locally
 function getData() {
     return fetch('data.json')
@@ -34,8 +34,8 @@ function getTimes(card, period) {
 // Adds a card for each data entry
 async function populateElements(period) {
     console.log('populateElements');
-    // let data = await getData();
-    let container = document.querySelector('#grid');
+    let data = await getData();
+    let container = document.querySelector('.grid');
     for (let i = 0; i < data.length; i++) {
         let card = data[i];
         let title = card.title;
@@ -43,32 +43,36 @@ async function populateElements(period) {
 
         let element =
             `
-            <div class="card ${(card.title.toLowerCase()).replace(/\s/g, "-")}"> 
+            <div class="card ${(card.title.toLowerCase()).replace(/\s/g, "-")}" remove> 
             <div class="decoration"></div> 
+            <div class="deco-radius"></div>
             <div class="content"> 
             <div class="title">${(title)}
-            <img src="images/icon-ellipsis.svg" width="20" height="auto" alt=""> 
+            <span class="ellipsis"></span>
             </div> 
+            <div class="times">
             <div class="current">${(times.current)}hrs</div> 
             <div class="previous">
             <span class="previous-timeframe">${(times.previousTimeframe)}</span> - <span class="previous-hours">${(times.previous)}hrs</span></div> 
             </div> 
             </div>
+            </div>
             `;
-        container.innerHTML += element;
+        container.insertAdjacentHTML('beforeend', element);
 
 
     }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    populateElements('daily');
+    populateElements(period)
     let buttons = document.querySelectorAll('.time-selection');
-    buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            period = button.getAttribute('data-flag');
-            console.log(period);
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+            period = buttons[i].getAttribute('data-flag');
             populateElements(period);
         })
-    })
+
+    }
+
 })

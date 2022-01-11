@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 :root{
-    --blue- hsl(246, 80%, 60%);
+    --blue: hsl(246, 80%, 60%);
     --soft-blue: hsl(195, 74%, 62%); /* play */
 --light-orange: hsl(15, 100%, 70%); /* work */
 --light-red: hsl(348, 100%, 68%); /* study */
@@ -9,53 +9,153 @@
 --soft-yellow: hsl(43, 84%, 65%); /* self care */
 --very-dark-blue: hsl(226, 43%, 10%);
 --dark-blue: hsl(235, 46%, 20%);
+--dark-blue-hover: hsl(235, 46%, 30%);
 --desaturated-blue: hsl(235, 45%, 61%);
---pale-Blue: hsl(236, 100%, 87%);
+--pale-blue: hsl(236, 100%, 87%);
+--font-rubik: 'Rubik', 'Helvetica Neue', helvetica, arial, sans-serif;
+--large-radius: 1rem;
 }
+
 
 body{
     background-color: var(--very-dark-blue);
     color: #fff;
 }
-#wrapper{
+
+.attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+.wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 90vh;
 }
-#grid{
+.grid{
     height: 31.6rem;
     display: grid;
-    grid-template-columns:  15rem .8rem 15rem .8rem 15rem .8rem 15rem;
-    grid-template-rows: 1fr .8rem 1fr;
+    grid-template-columns:  15rem 2rem 15rem 2rem 15rem 2rem 15rem;
+    grid-template-rows: 1fr 2rem 1fr;
 }
-
+.user, .timeframe-selection{
+    padding: 2rem 2rem 0 2rem;
+}
 .card{
-    height: 100%;
+    height: 15.4rem;
     width: 100%;
     background-color: var(--dark-blue);
-    border-radius: .6rem;
+    border-radius: var(--large-radius);
     overflow: hidden;
 }
+
 .decoration{
-    height: 2.8rem;
+    height: 25%;
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: center;
+    margin-bottom: -.8rem;
 }
 .content{
-    border-radius: .6rem .6rem 0 0;
-    margin-top: -1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 65%;
+    border-radius: var(--large-radius);
+    padding: 0 2rem;
+}
+.deco-radius{
+    content: '';
+    height: 10%;
+    width: 100%;
+    border-radius: var(--large-radius) var(--large-radius) 0 0;
     background-color: var(--dark-blue);
-    padding: 2rem;
+}
+.card:not(.main-block):hover, .card:hover .deco-radius{
+    background-color: var(--dark-blue-hover);
 }
 .title{
-    border-radius: .6rem 0 0 .6rem;
+    border-radius: var(--large-radius);
+    width: 100%;
+    height: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.title .ellipsis{
+    width: 1.3rem;
+    height: .3rem;
+    background-color: #BBC0FF;
+    /* mask-image: url("data:image/svg+xml,%3Csvg width='21' height='5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z'  fill-rule='evenodd'/%3E%3C/svg%3E"); */
+    -webkit-mask-image: url('../images/icon-ellipsis.svg');
+}
+.title:hover{
+    cursor: pointer;
+}
+.title:hover .ellipsis{
+    background-color: #fff;
 }
 .main-block{
     height: 100%;
     grid-column: 1 / span 1;
     grid-row: 1 / span 4;
-    
+    border-radius: var(--large-radius);
+    overflow: hidden;
+}
+.user{
+    background-color: var(--blue);
+    border-radius: var(--large-radius);
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    height: 60%;
+}
+.user .avatar{
+    margin-bottom: 2rem;
+}
+.user .avatar,.user .avatar img{
+    width: 4rem;
+    height: 4rem;
+}
+.user .avatar img{
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.timeframe-selection{
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.timeframe-selection input{
+    display: none;
+}
+.timeframe-selection label{
+    padding-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--desaturated-blue);
+}
+
+.timeframe-selection label:hover, .timeframe-selection input:checked + label{
+    color: #fff;
+    cursor: pointer;
+}
+.times{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap: 1rem;
+}
+.current{
+    height: 3rem;
+}
+.previous{
+    height: 1.5rem;
 }
 .work{
     grid-column: 3 / span 1;
@@ -105,6 +205,116 @@ body{
     grid-column: 7 / span 1;
     grid-row: 3  / span 1;
 }
- @media and screen (min-width: 1440px) {
-     
- }
+
+/* Typography */
+h1, .card {
+    font-family: var(--font-rubik);
+    color: #fff;
+}
+h1{
+    font-weight: 300;
+font-size: .9rem;
+color: var(--pale-blue);
+}
+h1 .name{
+    display: block;
+    font-size: 2.2rem;
+    color: #fff;
+}
+.current{
+    font-size: 3rem;
+    font-weight: 300;
+}
+.previous{
+    font-weight: 300;
+    font-size: .9rem;
+    color: var(--pale-blue);
+}
+
+@media only screen and (max-width: 1140px) {
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr 1.5rem);
+        height: 100%;
+    }
+    .wrapper{
+        height: 100vh;
+        max-width: 90%;
+    }
+    .user{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 50%;
+    }
+    .user .avatar{
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
+
+    h1 .name{
+        font-size: 1.5rem;
+    }
+
+    .timeframe-selection{
+        flex-direction: row;
+        padding-top: 1.3rem;
+    }
+
+    .timeframe-selection label {
+        padding-bottom: 1.2rem;
+    }
+
+    .card:not(.main-block){
+        grid-column: 1 / span 1;
+        height: 10rem;
+    }
+    .main-block{
+        height: 12rem;
+        grid-row: 1 / span 1;
+    }
+    .work{
+        grid-row: 3 / span 1;
+    }
+    .play{
+        grid-row: 5 / span 1;
+    }
+    .study{
+        grid-row: 7 / span 1;
+    }
+    .exercise{
+        grid-row: 9 / span 1;
+    }
+    .social{
+        grid-row: 11 / span 1;
+    }
+    .self-care{
+        grid-row: 13 / span 1;
+    }
+    .decoration{
+        height: 30%;
+    }
+   .deco-radius{
+       height: 15%;
+   }
+    .content{
+        justify-content: space-around;
+        height: 55%;
+        padding: 0 1.5rem;
+    }
+    .times{
+        margin-bottom: 1rem;
+    }
+    .times{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .current {
+        font-size: 2rem;
+    }
+    .current, .previous{
+        height: auto;
+    }
+    
+}
