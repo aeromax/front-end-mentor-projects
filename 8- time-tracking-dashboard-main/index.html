@@ -10,42 +10,30 @@
   <link rel="stylesheet" href="css/style.css" />
   <title>Frontend Mentor | Time tracking dashboard</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
-  <div id="wrapper">
-    <main>
-      <div id="grid">
+  <main>
+    <div class="wrapper">
+      <div class="grid">
         <div class="card main-block">
           <div class="user">
-            <div class="avatar"></div>
-            <h1>Report for <span class="name">Jeremony Robson</span></h1>
+            <div class="avatar"><img src="images/image-jeremy.png" alt=""></div>
+            <h1 class="h1">Report for <span class="name">Jeremony Robson</span></h1>
           </div>
           <nav class="timeframe-selection">
-            <label for="btn-daily">Daily</label>
             <input type="radio" name="timeframe" class="time-selection" id="btn-daily" data-flag="daily">
-            <label for="btn-weekly">Weekly</label>
+            <label for="btn-daily">Daily</label>
             <input type="radio" name="timeframe" class="time-selection" id="btn-weekly" data-flag="weekly">
-            <label for="btn-monthly">Monthly</label>
+            <label for="btn-weekly">Weekly</label>
             <input type="radio" name="timeframe" class="time-selection" id="btn-monthly" data-flag="monthly">
+            <label for="btn-monthly">Monthly</label>
           </nav>
 
         </div>
       </div>
-  </div>
+    </div>
   </main>
-  </div>
 
   <footer>
     <div class="attribution">
