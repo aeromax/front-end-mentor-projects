@@ -1,4 +1,6 @@
 let period = 'daily';
+let cardsExist = 0;
+
 // Store tracking data locally
 function getData() {
     return fetch('data.json')
@@ -14,6 +16,7 @@ function getData() {
         });
 }
 
+// Sets previous timeframe language into an array
 function getTimes(card, period) {
     let arr = [];
     if (period == 'daily') {
@@ -36,14 +39,24 @@ async function populateElements(period) {
     console.log('populateElements');
     let data = await getData();
     let container = document.querySelector('.grid');
+    cardsExist = cardsExist + 1;
     for (let i = 0; i < data.length; i++) {
         let card = data[i];
         let title = card.title;
         let times = getTimes(card, period);
-
-        let element =
-            `
-            <div class="card ${(card.title.toLowerCase()).replace(/\s/g, "-")}" remove> 
+        if (cardsExist > 1) {
+            let e2 = document.querySelectorAll('.current');
+            let e3 = document.querySelectorAll('.previous-timeframe');
+            let e4 = document.querySelectorAll('.previous-hours');
+            e2[i].innerText = times.current + 'hrs';
+            e3[i].innerText = times.previousTimeframe;
+            e4[i].innerText = times.previous + 'hrs';
+        }
+        else if (cardsExist == 1) {
+            console.log('inserting elements');
+            let element =
+                `
+            <div class="card ${(card.title.toLowerCase()).replace(/\s/g, "-")}"> 
             <div class="decoration"></div> 
             <div class="deco-radius"></div>
             <div class="content"> 
@@ -58,12 +71,12 @@ async function populateElements(period) {
             </div>
             </div>
             `;
-        container.insertAdjacentHTML('beforeend', element);
-
-
+            container.insertAdjacentHTML('beforeend', element);
+        }
     }
 }
 
+// Sets click event listeners on our nav buttons, and executes function to populate elements with appropriate time period
 document.addEventListener('DOMContentLoaded', function () {
     populateElements(period)
     let buttons = document.querySelectorAll('.time-selection');
